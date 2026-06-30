@@ -30,9 +30,11 @@ const Header = ({ site, navItems }) => html`
   </header>
 `;
 
-const WorkflowCard = ({ workflowNodes }) => html`
+const WorkflowCard = ({ site, workflowNodes }) => html`
   <div class="hero-card" aria-label="ARGO workflow illustration">
-    <div class="edition">Half-day<small>tutorial</small></div>
+    <div class="edition logo-badge">
+      <img src="${site.conferenceLogo.src}" alt="${site.conferenceLogo.alt}">
+    </div>
     <div class="workflow">
       <div class="line one"></div>
       <div class="line two"></div>
@@ -61,7 +63,7 @@ const Hero = ({ site, meta, actions, workflowNodes }) => html`
           ${actions.map(renderButton).join("")}
         </div>
       </div>
-      ${WorkflowCard({ workflowNodes })}
+      ${WorkflowCard({ site, workflowNodes })}
     </div>
   </section>
 `;
